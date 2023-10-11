@@ -1,0 +1,6 @@
+rdkit
+openai
+tiktoken
+pandas
+tqdm
+chemprop
