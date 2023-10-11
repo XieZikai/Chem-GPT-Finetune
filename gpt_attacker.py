@@ -225,6 +225,16 @@ class Attacker:
 
     #
     def replacement_test(self, path, start_from=0):
+        """
+        Ablation study: replacement test.
+
+        When openai API timeout, the script will stop and record all previous result. Please use 'start_from' to
+        resume the test.
+
+        :param path: data path
+        :param start_from: starting point for resuming the test
+        :return:
+        """
         with open(os.path.join(path, 'valid.jsonl'), 'r') as json_file:
             json_list = list(json_file)
 

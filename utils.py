@@ -1,6 +1,7 @@
 from rdkit import Chem
 import copy
 import re
+import pandas as pd
 
 
 SMART_LIST = [
@@ -130,3 +131,14 @@ def match_smart_by_group(smiles, smart):
             match = Chem.MolFromSmiles(smile).GetSubstructMatches(Chem.MolFromSmarts(smart))
             matches.append(match)
     return matches
+
+
+def write_file(df_train: pd.DataFrame, df_test: pd.DataFrame, postfix: str = ''):
+    """Write a dataframe to a file as json in records form."""
+    outdir = make_output_dir(postfix)
+
+    filename_train = os.path.abspath(os.path.join(outdir, "train.jsonl"))
+    filename_valid = os.path.abspath(os.path.join(outdir, "valid.jsonl"))
+
+    df_train.to_json(filename_train, orient="records", lines=True, force_ascii=False)
+    df_test.to_json(filename_valid, orient="records", lines=True, force_ascii=False)
