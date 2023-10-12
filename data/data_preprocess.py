@@ -232,7 +232,6 @@ def get_photoswitch_data() -> pd.DataFrame:
     )
 
 
-
 if __name__ == "__main__":
     BASE_DIR = r'C:\Users\darkn\PycharmProjects\ChemGPT\out\new_data_gpt\ablation\new_core_ablation'
     folders = os.listdir(BASE_DIR)

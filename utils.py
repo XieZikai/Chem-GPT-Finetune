@@ -3,7 +3,10 @@ import copy
 import re
 import pandas as pd
 import os
+import time
 
+
+BASE_OUTDIR = './data/out'
 
 SMART_LIST = [
     '[NX1]#[CX2]',
