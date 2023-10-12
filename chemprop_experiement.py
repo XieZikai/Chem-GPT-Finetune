@@ -21,3 +21,7 @@ if __name__ == "__main__":
         args = chemprop.args.TrainArgs().parse_args(arguments)
         mean_score, std_score = chemprop.train.cross_validate(args=args, train_func=chemprop.train.run_training)
         print(mean_score, std_score)
+
+import openai
+
+openai.FineTune.create()
