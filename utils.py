@@ -2,6 +2,7 @@ from rdkit import Chem
 import copy
 import re
 import pandas as pd
+import os
 
 
 SMART_LIST = [
@@ -28,6 +29,14 @@ SMART_LIST = [
     '*-[C;D2]#[C;D1;H]',
     '*-[#9,#17,#35,#53]'
 ]
+
+
+def make_output_dir(run_name):
+    outdir = os.path.abspath(os.path.join(BASE_OUTDIR, time.strftime("%Y%m%d_%H%M%S")))
+    if run_name is not None:
+        outdir = f"{outdir}_{run_name}"
+    os.makedirs(outdir, exist_ok=True)
+    return outdir
 
 
 def startwith(string, atom):
