@@ -5,3 +5,6 @@ pandas
 tqdm
 chemprop
 umap-learn
+numpy
+pystow
+scikit-learn
