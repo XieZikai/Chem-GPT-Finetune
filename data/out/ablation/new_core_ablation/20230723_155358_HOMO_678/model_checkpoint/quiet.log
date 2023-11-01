@@ -1,0 +1,41 @@
+Fold 0
+Model 0 best validation cross_entropy = 0.242354 on epoch 14
+Model 0 test cross_entropy = 0.067831
+Ensemble test cross_entropy = 0.067831
+1-fold cross validation
+	Seed 0 ==> test cross_entropy = 0.067831
+Overall test cross_entropy = 0.067831 +/- 0.000000
+Elapsed time = 0:38:34
+Fold 0
+Model 0 best validation cross_entropy = 0.199765 on epoch 7
+Model 0 test cross_entropy = 0.113560
+Ensemble test cross_entropy = 0.113560
+1-fold cross validation
+	Seed 0 ==> test cross_entropy = 0.113560
+Overall test cross_entropy = 0.113560 +/- 0.000000
+Elapsed time = 0:37:42
+Fold 0
+Model 0 best validation cross_entropy = 0.111867 on epoch 11
+Model 0 test cross_entropy = 0.084687
+Ensemble test cross_entropy = 0.084687
+1-fold cross validation
+	Seed 0 ==> test cross_entropy = 0.084687
+Overall test cross_entropy = 0.084687 +/- 0.000000
+Elapsed time = 0:37:51
+Fold 0
+Model 0 best validation cross_entropy = 0.123822 on epoch 10
+Model 0 test cross_entropy = 0.087065
+Ensemble test cross_entropy = 0.087065
+1-fold cross validation
+	Seed 0 ==> test cross_entropy = 0.087065
+Overall test cross_entropy = 0.087065 +/- 0.000000
+Elapsed time = 0:38:04
+Fold 0
+Model 0 best validation cross_entropy = 0.132069 on epoch 11
+Model 0 test cross_entropy = 0.076658
+Ensemble test cross_entropy = 0.076658
+1-fold cross validation
+	Seed 0 ==> test cross_entropy = 0.076658
+Overall test cross_entropy = 0.076658 +/- 0.000000
+Elapsed time = 0:37:56
+Fold 0
