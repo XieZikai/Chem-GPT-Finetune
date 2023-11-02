@@ -10,6 +10,11 @@ fp_gen = AllChem.GetRDKitFPGenerator()
 
 
 def train_and_evaluate_jsonl(path):
+    """
+    Train and evaluate random forest classifier for dataset in certain path.
+    :param path: Dataset path, train.jsonl and valid.jsonl must be included.
+    :return:
+    """
     assert os.path.exists(os.path.join(path, 'train.jsonl'))
     assert os.path.exists(os.path.join(path, 'valid.jsonl'))
 
@@ -60,6 +65,13 @@ def train_and_evaluate_jsonl(path):
 
 
 def train_and_evaluate_csv(df_train, df_test):
+    """
+    Train and evaluate random forest classifier for dataset in the form of pandas DataFrame.
+    :param df_train: Training set dataframe.
+    :param df_test: Validation set dataframe.
+    :return:
+    """
+
     df = pd.read_csv(df_train)
 
     train_y = []

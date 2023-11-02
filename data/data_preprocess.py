@@ -12,7 +12,7 @@ DATA_FILE = 'CSD_EES_DB.csv'
 def generate_classification_dataset(column, df=None, num_class=2, split=0.8):
     """
     Column set: [HOMO, LUMO, E(S1), f(S1), E(S2), f(S2), E(S3), f(S3), E(T1), E(T2), E(T3)]
-
+    Generate classification dataset by splitting data in percentile.
     :param
         num_class:
         Class of classification. All dataset will be divided according to the percentiles of class numbers.
@@ -56,6 +56,14 @@ def generate_classification_dataset(column, df=None, num_class=2, split=0.8):
 
 
 def generate_classification_dataset_by_equipartition(column='LUMO', df=None, num_class=2, split=0.8):
+    """
+    Generate classification dataset by splitting data in min-max equipartition.
+    :param column:
+    :param df:
+    :param num_class:
+    :param split:
+    :return:
+    """
     assert column in ['HOMO', 'LUMO', 'E(S1)', 'f(S1)', 'E(S2)', 'f(S2)', 'E(S3)', 'f(S3)', 'E(T1)', 'E(T2)', 'E(T3)']
     if df is None:
         df = pd.read_csv(DATA_FILE)
@@ -96,6 +104,13 @@ def generate_classification_dataset_by_equipartition(column='LUMO', df=None, num
 
 
 def generate_core_train_test_by_equipartition(column, core_file_name, num_class=2):
+    """
+    Generate core-file ablation study dataset by splitting data in min-max equipartition.
+    :param column:
+    :param core_file_name: Molecules in certain functional group that are taken out as validation set.
+    :param num_class:
+    :return:
+    """
     assert column in ['HOMO', 'LUMO', 'E(S1)', 'f(S1)', 'E(S2)', 'f(S2)', 'E(S3)', 'f(S3)', 'E(T1)', 'E(T2)', 'E(T3)']
     df = pd.read_csv(DATA_FILE)
     df = df.dropna()

@@ -43,12 +43,24 @@ def make_output_dir(run_name):
 
 
 def startwith(string, atom):
+    """
+    Determine if an atom starts with certain character.
+    :param string:
+    :param atom:
+    :return:
+    """
     if atom == 'C':
         return string.startswith('C') or string.startswith('c')
     return string.startswith(atom)
 
 
 def replace_smiles_with_missing(smiles, atom_indices):
+    """
+    Replace atom in a SMILES string by its index.
+    :param smiles:
+    :param atom_indices:
+    :return:
+    """
     keys = ['=', '#']
     mol = Chem.MolFromSmiles(smiles)
 
@@ -103,6 +115,13 @@ def replace_smiles_with_missing(smiles, atom_indices):
 
 
 def replace_one_atom(smiles, remove=False):
+    """
+    Replace or remove one atom from a SMILES string.
+    Return all possible SMILES with one atom replaced or removed.
+    :param smiles:
+    :param remove:
+    :return:
+    """
     atom_set = ['B', 'N', 'O', 'F', 'Si', 'P', 'S', 'Cl', 'As', 'Se', 'Br', 'I']
     removed_list = []
     for atom in atom_set:
@@ -124,6 +143,13 @@ def replace_one_atom(smiles, remove=False):
 
 
 def match_smart(smiles, smart_list=None):
+    """
+    Match SMILES strings with SMART rule.
+    Return all possible matches.
+    :param smiles:
+    :param smart_list:
+    :return:
+    """
     if smart_list is None:
         smart_list = SMART_LIST
     matches = []
@@ -136,6 +162,13 @@ def match_smart(smiles, smart_list=None):
 
 
 def match_smart_by_group(smiles, smart):
+    """
+    Match SMILES strings with functional group properties.
+    Return all possible matches.
+    :param smiles:
+    :param smart:
+    :return:
+    """
     matches = []
     for smile in smiles:
         mol = Chem.MolFromSmiles(smile)

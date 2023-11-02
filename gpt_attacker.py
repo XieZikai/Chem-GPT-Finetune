@@ -14,8 +14,16 @@ from tqdm import tqdm
 
 
 class Attacker:
-
+    """
+    GPT-model attacker to conduct atom-replacement attack for ablation study.
+    Call method replacement_test to conduct experiment.
+    """
     def __init__(self, model_id, model_name='ada'):
+        """
+
+        :param model_id: Pretrained GPT model id to attack.
+        :param model_name: Pretrained GPT model name.
+        """
         self.encoding = tiktoken.encoding_for_model(model_name)
         self.model_id = model_id
         self.token_list = self.get_all_tokens()
